@@ -15,32 +15,7 @@
  */
 
 	
-public Rect getFramingRect() {
-if (framingRect == null) {
-  if (camera == null) {
-    return null;
-  }
-  Point screenResolution = configManager.getScreenResolution();
-        int screenx = screenResolution.x;
-        int screeny = screenResolution.y;
-        int width, height, left, top;
-        if (screenx > screeny) {
-            width = (int) (screenx * 12.5 / 100);
-            height = (int) (screeny * 25 / 100);
-            left = (int) screenx * 83 / 100;
-            top = (int) screeny * 75 / 100;
-        } else {
-            left = (int) (screenx * 12.5 / 100);
-            top = (int) (screeny * 25 / 100);
-            width = (int) screenx * 83 / 100;
-            height = (int) screeny * 75 / 100;
-        }
-  framingRect = new Rect(left,top, width, height);
 
-  Log.d(TAG, "Calculated framing rect: " + framingRect);
-}
-return framingRect;
-}
 package com.google.zxing.client.android.camera;
 
 import android.content.Context;
